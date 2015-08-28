@@ -33,6 +33,8 @@ func NewDialect(driver string) Dialect {
 		d = &sqlite3{}
 	case "mssql":
 		d = &mssql{}
+	case "ora":
+		d = &ora{}        
 	default:
 		fmt.Printf("`%v` is not officially supported, running under compatibility mode.\n", driver)
 		d = &commonDialect{}
